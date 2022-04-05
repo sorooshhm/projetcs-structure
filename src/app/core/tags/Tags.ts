@@ -1,0 +1,1 @@
+export const Tags = ['most_sale','new', 'most_seen']

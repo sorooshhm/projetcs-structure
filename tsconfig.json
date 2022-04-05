@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES6",
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true
+  },
+  "exclude": ["tests", "env", "jest.config.js"]
+}
