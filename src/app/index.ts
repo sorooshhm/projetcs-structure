@@ -3,6 +3,7 @@ import * as express from 'express';
 import { Application, Request, Response } from 'express';
 import * as mongoose from 'mongoose';
 import { CloudInterface } from './core/cloud/CloudInterface';
+import { connectRedis } from './core/redis/Redis';
 import { Obj } from './core/types/Types';
 import { Error as ErrorMid } from './middlewares/Error.middleware';
 import { ResponseMiddleware } from './middlewares/Responses.middleware';
@@ -85,6 +86,16 @@ class App {
   setUpCloud(env: Obj) {
     const cloud = new CloudInterface(env);
     CloudInterface.setCloud(cloud);
+  }
+
+  setUpRedis(env: Obj) {
+    connectRedis()
+      .then(res => {
+        console.log('Redis Connected');
+      })
+      .catch(err => {
+        console.log("redis didn't connect ", err);
+      });
   }
 }
 

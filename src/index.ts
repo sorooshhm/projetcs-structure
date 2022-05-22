@@ -5,4 +5,5 @@ envVars()
 const env = process.env;
 const app = new App(env);
 
+app.setUpRedis(env);
 app.setUpServer(env)
